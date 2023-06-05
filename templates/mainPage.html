@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% block tabs %}
+    <li class="active"><a href="#">Главная</a></li>
+    <li><a href="{{ url_for('about') }}">О нас</a></li>
+    <li><a href="{{ url_for('tents') }}">Шатры</a></li>
+    <li><a href="#">Домики</a></li>
+    <li><a href="#">Услуги</a></li>
+    <li><a href="#">Как добраться</a></li>
+    <li><a href="#">Отзывы</a></li>
+    <li><a href="#">Контакты</a></li>
+{% endblock %} 
+{% block main %}
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-text">
+                        <h1>АМАРА</h1>
+                        <p>Комфортные шатры для отдыха на Щучьем озере</p>
+                        <a href="#" class="primary-btn">Узнать подробнее</a>
+                    </div>
+                </div>
+                <div class="col-xl offset-xl-2 offset-lg-1">
+                    <div class="booking-form">
+                        <h3>Забронировать шатер</h3>
+                        <form action="{{ url_for('tents') }}" method="post">
+                            <div class="check-date">
+                                <label for="date-in">Планируемая дата:</label>
+                                <input type="text" class="date-input" name="date-in">
+                                <i class="icon_calendar"></i>
+                            </div>
+                            <div class="select-option">
+                                <label for="guest">Количество гостей:</label>
+                                <select id="guest">
+                                    <option value="1">1 взрослый</option>
+                                    <option value="2">2 взрослых</option>
+                                    <option value="3">3 взрослых</option>
+                                    <option value="4">4 взрослых</option>
+                                </select>
+                                <select id="child">
+                                    <option value="1">1 ребенок</option>
+                                    <option value="2">2 детей</option>
+                                    <option value="3">3 детей</option>
+                                    <option value="4">4 детей</option>
+                                </select>
+                            </div>
+                            <button type="submit">Проверить наличие</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slider owl-carousel">
+            <div class="hs-item set-bg" data-setbg="static/img/hero/hero-1.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="static/img/hero/hero-2.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="static/img/hero/hero-3.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="static/img/hero/hero-4.jpg"></div>
+            <div class="hs-item set-bg" data-setbg="static/img/hero/hero-5.jpg"></div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Us Section Begin -->
+    <section class="aboutus-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <span>О нас</span>
+                            <h2>Комфортный отдых на Щучьем озере</h2>
+                        </div>
+                        <p class="f-para"> Добро пожаловать на наш уютный пляж на берегу Щучьего озера! Здесь вы найдете все, что нужно для отличного отдыха на природе. На территории пляжа расположены комфортные беседки и шатры, где вы можете отдохнуть от жары и насладиться прохладным ветерком.
+                        </p>
+                        <a href="{{ url_for('about') }}" class="primary-btn about-btn">Больше информации</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="static/img/about/about1.jpg" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="static/img/about/about2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Services Section End -->
+    <section class="services-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Почувствуйте атмосферу</span>
+                        <h2>Наши услуги</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-evenly">
+                <div class="col-lg-4 mx-auto">
+                    <div class="service-item">
+                        <img src="static/img/icons/tent.png" width="50" height="50">
+                        <h4>Шатры</h4>
+                        <p>Удобные и просторные шатры для комфортного отдыха на природе. Шатры оборудованы мебелью, позволяющей отдохнуть и насладиться красивым видом на Щучье озеро. Вы можете арендовать шатры на целый день и наслаждаться свежим воздухом, не беспокоясь о знойной жаре.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mx-auto">
+                    <div class="service-item">
+                        <img src="static/img/icons/bed.png" width="50" height="50">
+                        <h4>Домики</h4>
+                        <p>Уютные домики предлагают комфортное проживание на природе. Домики оборудованы всем необходимым для приятного отдыха: кроватями, столом, стульями и местом для хранения вещей. Вы можете арендовать домики на целый день и наслаждаться красивым видом на озеро, не беспокоясь о погодных условиях.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-evenly">
+                <div class="col-lg-4 mx-auto">
+                    <div class="service-item">
+                        <img src="static/img/icons/barbeque.png" width="50" height="50">
+                        <h4>Мангальные зоны</h4>
+                        <p>Удобные мангальные зоны для приготовления шашлыка и других блюд на природе. Зоны оборудованы всем необходимым: мангалом, решеткой, вилками и ножами. Вы можете арендовать мангальные зоны на целый день и наслаждаться приготовлением еды на свежем воздухе.   </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mx-auto">
+                    <div class="service-item">
+                        <img src="static/img/icons/rent.png" width="50" height="50">
+                        <h4>Прокат</h4>
+                        <p>Аренда сапбордов для любителей активного отдыха на воде. Сапборды предоставляются вместе с гребными веслами и жилетами спасения. Вы можете арендовать сапборды на целый день и наслаждаться красивым видом на озеро, занимаясь любимым видом спорта.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Отзывы</span>
+                        <h2>Что о нас говорят?</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="testimonial-slider owl-carousel">
+                        <div class="ts-item">
+                            <p>Я была в восторге от этого пляжа! Он находится в очень красивом месте, рядом с Щучьим озером, и оборудован всем необходимым для комфортного отдыха. Беседки и шатры очень удобные, а персонал очень дружелюбный и готов помочь в любой ситуации.</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star-half_alt"></i>
+                                </div>
+                                <h5> - Виктория К.</h5>
+                            </div>
+                            <img src="static/img/testimonial-logo.png" width="50" height="50" alt="">
+                        </div>
+                        <div class="ts-item">
+                            <p>Если вы ищете идеальное место для отдыха на природе, то этот пляж - идеальный выбор! Я провел здесь несколько дней с друзьями и был впечатлен уровнем сервиса. Все чисто и аккуратно, а атмосфера спокойная и расслабляющая.</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star-half_alt"></i>
+                                </div>
+                                <h5> - Николай Д.</h5>
+                            </div>
+                            <img src="static/img/testimonial-logo.png" width="50" height="50" alt="">
+                        </div>
+                        <div class="ts-item">
+                            <p>Этот пляж - настоящая находка! Я и моя семья провели здесь незабываемые выходные. Было очень приятно отдохнуть в тени беседки, поплавать в озере и пожарить шашлыки на мангале. Я обязательно вернусь сюда еще раз!</p>
+                            <div class="ti-author">
+                                <div class="rating">
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                    <i class="icon_star"></i>
+                                </div>
+                                <h5> - Чингиз Ц.</h5>
+                            </div>
+                            <img src="static/img/testimonial-logo.png" width="50" height="50" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
+{% endblock %} 
